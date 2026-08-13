@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- The Envelope Section -->
+    <div class="envelope-wrapper" onclick="this.classList.toggle('is-open')">
+        <div class="envelope">
+            <div class="flap"></div>
+            <div class="letter">
+                <h4>My Dearest,</h4>
+                <p>I made this so you always have our best memories close by while you recover. I love you so much. Tap the cards below!</p>
+            </div>
+            <div class="envelope-front"></div>
+        </div>
+    </div>
+
+    <!-- The Gallery (JavaScript injects the cards here) -->
+    <div id="gallery-container"></div>
+
+    <!-- The Message Box (Formspree) -->
+    <div class="message-section">
+        <h3>Send me a note 💌</h3>
+        <!-- Don't forget to replace this link with your actual Formspree URL! -->
+        <form action="https://formspree.io/f/maewjpkk" method="POST">
+            <textarea name="message" placeholder="How are you feeling today?" required></textarea>
+            <button type="submit">Send to you</button>
+        </form>
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
