@@ -8,29 +8,56 @@
 </head>
 <body>
 
-    <!-- The Envelope Section -->
-    <div class="envelope-wrapper" onclick="this.classList.toggle('is-open')">
-        <div class="envelope">
-            <div class="flap"></div>
-            <div class="letter">
-                <h4>My Dearest,</h4>
-                <p>I made this so you always have our best memories close by while you recover. I love you so much. Tap the cards below!</p>
+    <header class="page-header">
+        <span class="eyebrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21C12 21 4 15.5 4 9.5C4 6.5 6.5 4 9.5 4C11 4 12 5 12 5C12 5 13 4 14.5 4C17.5 4 20 6.5 20 9.5C20 15.5 12 21 12 21Z"/></svg>
+            a little archive of us
+        </span>
+        <h1>For you, always</h1>
+    </header>
+
+    <div class="envelope-section">
+        <div class="envelope-wrapper" id="envelope" onclick="this.classList.toggle('is-open')">
+            <div class="envelope">
+                <div class="flap"></div>
+                <div class="wax-seal">L</div>
+                <div class="letter">
+                    <h4>My dearest,</h4>
+                    <p>I made this so you always have our best memories close by while you recover. I love you so much. Tap the cards below.</p>
+                </div>
+                <div class="envelope-front"></div>
             </div>
-            <div class="envelope-front"></div>
         </div>
+        <p class="envelope-hint">tap to open</p>
     </div>
 
-    <!-- The Gallery (JavaScript injects the cards here) -->
+    <div class="stats-row" id="stats-row">
+        <div class="stat"><span class="num" id="stat-count">0</span><span class="label">memories</span></div>
+        <div class="stat"><span class="num" id="stat-pinned">0</span><span class="label">pinned</span></div>
+    </div>
+
+    <div class="filter-row" id="filter-row">
+        <button class="filter-pill active" data-filter="all">All</button>
+        <button class="filter-pill" data-filter="pinned">Pinned</button>
+    </div>
+
     <div id="gallery-container"></div>
 
-    <!-- The Message Box (Formspree) -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close">
+            <svg viewBox="0 0 24 24"><path d="M6 6L18 18M6 18L18 6" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
     <div class="message-section">
-        <h3>Send me a note 💌</h3>
-        <!-- Don't forget to replace this link with your actual Formspree URL! -->
-        <form action="https://formspree.io/f/maewjpkk" method="POST">
-            <textarea name="message" placeholder="How are you feeling today?" required></textarea>
+        <h3>Send me a note</h3>
+        <p class="sub">How are you feeling today?</p>
+        <form action="https://formspree.io/f/maewjpkk" method="POST" id="note-form">
+            <textarea name="message" placeholder="Tell me anything..." required></textarea>
             <button type="submit">Send to you</button>
         </form>
+        <p class="sent-note" id="sent-note">Sent, with love. 🕊️</p>
     </div>
 
     <script src="app.js"></script>
